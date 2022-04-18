@@ -1,0 +1,14 @@
+import { Story, Meta } from '@storybook/react';
+import { DsTagProps } from './tag';
+declare const _default: Meta<import("@storybook/react").Args>;
+export default _default;
+export declare const PrimarySolid: Story<DsTagProps>;
+export declare const SecondarySolid: Story<DsTagProps>;
+export declare const ErrorSolid: Story<DsTagProps>;
+export declare const SuccessSolid: Story<DsTagProps>;
+export declare const AlertSolid: Story<DsTagProps>;
+export declare const PrimaryOutline: Story<DsTagProps>;
+export declare const SecondaryOutline: Story<DsTagProps>;
+export declare const ErrorOutline: Story<DsTagProps>;
+export declare const SuccessOutline: Story<DsTagProps>;
+export declare const AlertOutline: Story<DsTagProps>;

@@ -4,6 +4,7 @@ import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
 import postcss from 'rollup-plugin-postcss';
 import command from 'rollup-plugin-command';
+import copy from 'rollup-plugin-copy';
 import * as packageJson from './package.json';
 
 export default [
@@ -30,14 +31,15 @@ export default [
         modules: true,
         use: ['sass'],
       }),
+      copy({
+        targets: [
+          {
+            src: 'src/react-app-env.d.ts',
+            dest: ['dist/cjs/types/', 'dist/esm/types/'],
+          },
+        ],
+      }),
       typescript({ tsconfig: './tsconfig.build.json' }),
     ],
-  },
-  // combine generated types into a single file
-  {
-    input: 'dist/esm/types/index.d.ts',
-    output: [{ file: 'dist/index.d.ts', format: 'esm' }],
-    plugins: [dts(), command('rm -r dist/{cjs,esm}/types')],
-    external: [/\.scss$/],
   },
 ];

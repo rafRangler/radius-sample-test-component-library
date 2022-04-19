@@ -30,7 +30,7 @@ export default [
         modules: true,
         use: ['sass'],
       }),
-      typescript({ tsconfig: './tsconfig.json' }),
+      typescript({ tsconfig: './tsconfig.build.json' }),
     ],
   },
   // combine generated types into a single file
